@@ -1,7 +1,12 @@
+import 'dart:developer';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:karry_go/Screens/SignUp%20Screens/success.dart';
 import 'package:karry_go/utils/colors.dart';
+import 'package:karry_go/utils/utils.dart';
 import 'package:karry_go/widgets/TextField.dart';
 import 'package:karry_go/widgets/logo.dart';
 import 'package:karry_go/widgets/signUpBars.dart';
@@ -32,79 +37,64 @@ class _PaymentInfoState extends State<PaymentInfo> {
   String account = "";
   String name = "";
   String holder = "";
-/*
-  Future next(Size size) async {
-    firstName = firstNameController.text.trim();
-    lastName = lastNameController.text.trim();
-    relationship = relationshipController.text.trim();
-    email = emailController.text.trim();
-    phoneNumber = dialCode + phoneController.text.trim();
-    address = addressController.text.trim();
 
-    print(phoneNumber);
+  Future next(Size size) async {
+    account = accountController.text.trim();
+    name = nameController.text.trim();
+    holder = holderController.text.trim();
 
     setState(() {
-      firstBool = firstName.length < 2 ? true : false;
-      lastBool = lastName.length < 2 ? true : false;
-      emailBool = !EmailValidator.validate(email) ? true : false;
-      relationshipBool = relationship.length < 4 ? true : false;
-      phoneBool = phoneNumber.length < 10 ? true : false;
-      addressBool = address.length < 10 ? true : false;
+      accountBool = account.length < 11 ? true : false;
+      nameBool = name.length < 5 ? true : false;
+      holderBool = holder.length < 7 ? true : false;
     });
-    if (firstBool == false &&
-        lastBool == false &&
-        relationshipBool == false &&
-        emailBool == false &&
-        phoneBool == false &&
-        addressBool == false) {
-      try {
-        showDialog(
-          context: context,
-          barrierDismissible: false,
-          builder: (context) => Center(
-            child: CircularProgressIndicator(
-              color: AppColors.green,
-            ),
+
+    try {
+      showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (context) => Center(
+          child: CircularProgressIndicator(
+            color: AppColors.green,
           ),
-        );
+        ),
+      );
 
-        log("All False");
-        Map<String, dynamic> userInfoMap = {
-          "firstName": firstName,
-          "lastName": lastName,
-          "relationship": relationship,
-          "email": email,
-          "phoneNumber": phoneNumber,
-          "address": address,
-        };
+      Map<String, dynamic> userInfoMap = {
+        "Account Number": account,
+        "Bank Name": name,
+        "Account Name": holder,
+      };
 
-        log("All Mapped");
+      log("All Mapped");
 
-        FirebaseFirestore.instance
-            .collection("Users")
-            .doc(FirebaseAuth.instance.currentUser!.uid)
-            .collection("Guarantor Details")
-            .add(userInfoMap);
+      FirebaseFirestore.instance
+          .collection("Users")
+          .doc(FirebaseAuth.instance.currentUser!.uid)
+          .collection("Payment Info")
+          .add(userInfoMap);
 
-        log("All saved");
+      FirebaseFirestore.instance
+          .collection("Users")
+          .doc(FirebaseAuth.instance.currentUser!.uid)
+          .update({"dateRegistered": Timestamp.now()});
 
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) {
-              return Next();
-            },
-          ),
-        );
-      } on FirebaseAuthException catch (e) {
-        print(e);
+      log("All saved");
 
-        Utils.showSnackBar(e.message, size);
-      }
-    } else {
-      Utils.showSnackBar("Please Fill All Required Fields", size);
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) {
+            return Success();
+          },
+        ),
+      );
+    } on FirebaseAuthException catch (e) {
+      print(e);
+
+      Utils.showSnackBar(e.message, size);
     }
-  }*/
+  }
 
   @override
   void dispose() {
@@ -277,14 +267,7 @@ class _PaymentInfoState extends State<PaymentInfo> {
                         ),
                         GestureDetector(
                           onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) {
-                                  return Success();
-                                },
-                              ),
-                            );
+                            next(size);
                           },
                           child: Container(
                             alignment: Alignment.center,

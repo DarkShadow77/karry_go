@@ -1,23 +1,11 @@
-import 'dart:developer';
-
 import 'package:image_picker/image_picker.dart';
 
-Future<String> pickImage({ImageSource? source}) async {
-  final picker = ImagePicker();
+Future<XFile?> pickImage({ImageSource? source}) async {
+  ImagePicker imagePicker = ImagePicker();
 
-  String path = "";
+  XFile? file = await imagePicker.pickImage(source: source!);
 
-  try {
-    final getImage = await picker.pickImage(source: source!);
+  print("${file?.path}");
 
-    if (getImage != null) {
-      path = getImage.path;
-    } else {
-      path = "";
-    }
-  } catch (e) {
-    log(e.toString());
-  }
-
-  return path;
+  return file;
 }

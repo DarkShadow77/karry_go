@@ -1,8 +1,12 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:karry_go/Screens/Profile%20Screen/logout_modal.dart';
 import 'package:karry_go/utils/colors.dart';
+import 'package:karry_go/utils/databasemethods.dart';
 import 'package:karry_go/widgets/mySeparator.dart';
 
 class Profile extends StatefulWidget {
@@ -24,12 +28,94 @@ class _ProfileState extends State<Profile> {
     super.dispose();
   }
 
+  final _numberToMonthMap = {
+    1: "Jan",
+    2: "Feb",
+    3: "Mar",
+    4: "Apr",
+    5: "May",
+    6: "Jun",
+    7: "Jul",
+    8: "Aug",
+    9: "Sep",
+    10: "Oct",
+    11: "Nov",
+    12: "Dec",
+  };
+
+  final _dayToWeekMap = {
+    1: "Monday",
+    2: "Tuesday",
+    3: "Wednesday",
+    4: "Thursday",
+    5: "Friday",
+    6: "Saturday",
+    7: "Sunday",
+  };
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+
+    return FutureBuilder(
+      future: DatabaseMethods()
+          .getUserFromDB(FirebaseAuth.instance.currentUser!.uid),
+      builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+        if (snapshot.hasData) {
+          Map<String, dynamic> data =
+              snapshot.data!.data() as Map<String, dynamic>;
+          Timestamp dateRegistered = data['dateRegistered'] as Timestamp;
+          DateTime date = dateRegistered.toDate();
+
+          String finalDate =
+              "${date.day} ${_numberToMonthMap[date.month]}, ${date.year}";
+          return Body(
+            size: size,
+            firstName: data['firstName'],
+            lastName: data['lastName'],
+            email: data['email'],
+            phoneNumber: data['phoneNumber'],
+            image: data['Profile Photo'],
+            date: finalDate,
+          );
+        } else {
+          return Center(
+            child: CircularProgressIndicator(
+              color: AppColors.green,
+            ),
+          );
+        }
+      },
+    );
+  }
+}
+
+class Body extends StatelessWidget {
+  const Body({
+    Key? key,
+    required this.size,
+    required this.firstName,
+    required this.lastName,
+    required this.email,
+    required this.phoneNumber,
+    required this.image,
+    required this.date,
+  }) : super(key: key);
+
+  final Size size;
+  final String firstName;
+  final String lastName;
+  final String email;
+  final String phoneNumber;
+  final String image;
+  final String date;
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
       width: size.width * 1,
       color: AppColors.white,
+      margin: EdgeInsets.only(bottom: size.height * 0.13775),
       child: CustomScrollView(
         physics: BouncingScrollPhysics(),
         slivers: [
@@ -39,11 +125,16 @@ class _ProfileState extends State<Profile> {
             toolbarHeight: size.height * 0.11135,
             automaticallyImplyLeading: false,
             floating: true,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(
+                bottom: Radius.circular(30),
+              ),
+            ),
             backgroundColor: AppColors.white,
             stretch: true,
             title: Container(
               padding: EdgeInsets.symmetric(
-                horizontal: size.width * 0.07,
+                horizontal: size.width * 0.05,
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -105,8 +196,15 @@ class _ProfileState extends State<Profile> {
                               height: size.height * 0.10072,
                               width: size.width * 0.218,
                               decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: AppColors.subWhite2),
+                                shape: BoxShape.circle,
+                                color: AppColors.subWhite2,
+                                image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: NetworkImage(
+                                    image,
+                                  ),
+                                ),
+                              ),
                             ),
                             SizedBox(
                               width: size.width * 0.0513,
@@ -117,7 +215,7 @@ class _ProfileState extends State<Profile> {
                               children: [
                                 RichText(
                                   text: TextSpan(
-                                    text: "Bolaji Kolawole",
+                                    text: "${firstName + " " + lastName}",
                                     style: TextStyle(
                                       fontFamily: "Clash Grotesk SemiBold",
                                       fontSize: 20,
@@ -130,7 +228,7 @@ class _ProfileState extends State<Profile> {
                                 ),
                                 RichText(
                                   text: TextSpan(
-                                    text: "b.kolawole@karrygo.com",
+                                    text: email,
                                     style: TextStyle(
                                       fontFamily: "DM Sans",
                                       fontSize: 12,
@@ -144,7 +242,7 @@ class _ProfileState extends State<Profile> {
                                 ),
                                 RichText(
                                   text: TextSpan(
-                                    text: "0816 839 3384",
+                                    text: "0" + phoneNumber,
                                     style: TextStyle(
                                       fontFamily: "DM Sans",
                                       fontSize: 12,
@@ -274,8 +372,9 @@ class _ProfileState extends State<Profile> {
                               ),
                               SizedBox(height: size.height * 0.0083),
                               RichText(
+                                overflow: TextOverflow.ellipsis,
                                 text: TextSpan(
-                                  text: "2 Apr, 2022",
+                                  text: date,
                                   style: TextStyle(
                                     fontFamily: "Clash Grotesk SemiBold",
                                     fontSize: 15,
@@ -594,7 +693,9 @@ class _ProfileState extends State<Profile> {
                                 ),
                               ),
                               TextButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  logoutModal(context, size);
+                                },
                                 style: TextButton.styleFrom(
                                   padding: EdgeInsets.symmetric(
                                     vertical: size.height * 0.01185,

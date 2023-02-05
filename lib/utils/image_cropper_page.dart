@@ -2,11 +2,12 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:image_cropper/image_cropper.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:karry_go/utils/colors.dart';
 
-Future<String> imageCropperView(String? path, BuildContext context) async {
+Future<XFile?> imageCropperView(XFile? file, BuildContext context) async {
   CroppedFile? croppedFile = await ImageCropper().cropImage(
-    sourcePath: path!,
+    sourcePath: file!.path,
     aspectRatioPresets: [
       CropAspectRatioPreset.square,
       CropAspectRatioPreset.ratio3x2,
@@ -33,9 +34,9 @@ Future<String> imageCropperView(String? path, BuildContext context) async {
 
   if (croppedFile != null) {
     log("image cropped");
-    return croppedFile.path;
+    return croppedFile as XFile?;
   } else {
     log("Do nothing");
-    return "";
+    return file;
   }
 }

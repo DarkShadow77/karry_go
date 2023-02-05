@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:karry_go/Screens/Earning%20Screen/earnings.dart';
-import 'package:karry_go/Screens/Profile%20Screen/profile.dart';
-import 'package:karry_go/Screens/Trips%20Screen/trips.dart';
+import 'package:karry_go/Screens/Earning%20Screen/main.dart';
+import 'package:karry_go/Screens/Home%20Screen/main.dart';
+import 'package:karry_go/Screens/Profile%20Screen/main.dart';
+import 'package:karry_go/Screens/Trips%20Screen/main.dart';
 import 'package:karry_go/widgets/bottom_navbar.dart';
 
 class MainScreen extends StatefulWidget {
@@ -25,12 +26,10 @@ class _MainScreenState extends State<MainScreen> {
   }
 
   int _currentIndex = 0;
+  bool home = true;
 
   List<Widget> body = [
-    Container(
-      alignment: Alignment.center,
-      child: Text("0"),
-    ),
+    Home(),
     Trips(),
     Earnings(),
     Profile(),
@@ -40,29 +39,35 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      extendBody: true,
       body: body[_currentIndex],
       bottomNavigationBar: BottomNavBar(
         currentIndex: _currentIndex,
         homePressed: () {
           setState(() {
             _currentIndex = 0;
+            home = true;
           });
         },
         tripsPressed: () {
           setState(() {
             _currentIndex = 1;
+            home = false;
           });
         },
         earningPressed: () {
           setState(() {
             _currentIndex = 2;
+            home = false;
           });
         },
         profilePressed: () {
           setState(() {
             _currentIndex = 3;
+            home = false;
           });
         },
+        home: home,
       ),
     );
   }

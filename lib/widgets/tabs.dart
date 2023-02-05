@@ -111,127 +111,124 @@ class Tabs extends StatelessWidget {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Container(
-                                          height: size.height * 0.053325,
-                                          width: size.width * 0.115425,
-                                          decoration: BoxDecoration(
-                                            shape: BoxShape.circle,
-                                            color: AppColors.subWhite2,
-                                            image: DecorationImage(
-                                              image: AssetImage(
-                                                  "assets/images/upcoming1.png"),
+                                        Row(
+                                          children: [
+                                            Container(
+                                              height: size.height * 0.053325,
+                                              width: size.width * 0.115425,
+                                              decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                color: AppColors.subWhite2,
+                                                image: DecorationImage(
+                                                  image: AssetImage(
+                                                      "assets/images/upcoming1.png"),
+                                                ),
+                                              ),
                                             ),
-                                          ),
+                                            SizedBox(
+                                              width: size.width * 0.038475,
+                                            ),
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
+                                                    text: "Bolanle Adeshina",
+                                                    style: TextStyle(
+                                                      fontFamily:
+                                                          "Clash Grotesk SemiBold",
+                                                      fontSize: 14,
+                                                      color: AppColors.black,
+                                                    ),
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  height:
+                                                      size.height * 0.005925,
+                                                ),
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
+                                                    text: "50 mins ago",
+                                                    style: TextStyle(
+                                                      fontFamily: "DM Sans",
+                                                      fontSize: 12,
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                      color:
+                                                          AppColors.subBlack2,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
                                         ),
-                                        SizedBox(
-                                          width: size.width * 0.038475,
-                                        ),
-                                        SizedBox(
-                                          width: size.width * 0.599,
-                                          child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            children: [
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                      text: "Bolanle Adeshina",
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.end,
+                                              children: [
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
+                                                    text: "Trip Cost",
+                                                    style: TextStyle(
+                                                      fontFamily: "DM Sans",
+                                                      fontSize: 12,
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                      color:
+                                                          AppColors.subBlack2,
+                                                    ),
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  height:
+                                                      size.height * 0.005925,
+                                                ),
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
                                                       style: TextStyle(
-                                                        fontFamily:
-                                                            "Clash Grotesk SemiBold",
                                                         fontSize: 14,
                                                         color: AppColors.black,
                                                       ),
-                                                    ),
-                                                  ),
-                                                  SizedBox(
-                                                    height:
-                                                        size.height * 0.005925,
-                                                  ),
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                      text: "50 mins ago",
-                                                      style: TextStyle(
-                                                        fontFamily: "DM Sans",
-                                                        fontSize: 12,
-                                                        fontWeight:
-                                                            FontWeight.w700,
-                                                        color:
-                                                            AppColors.subBlack2,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.end,
-                                                children: [
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                      text: "Trip Cost",
-                                                      style: TextStyle(
-                                                        fontFamily: "DM Sans",
-                                                        fontSize: 12,
-                                                        fontWeight:
-                                                            FontWeight.w700,
-                                                        color:
-                                                            AppColors.subBlack2,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  SizedBox(
-                                                    height:
-                                                        size.height * 0.005925,
-                                                  ),
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                        style: TextStyle(
-                                                          fontSize: 14,
-                                                          color:
-                                                              AppColors.black,
+                                                      children: [
+                                                        TextSpan(
+                                                          text: getCurrency(),
+                                                          style: TextStyle(
+                                                              decoration:
+                                                                  TextDecoration
+                                                                      .lineThrough,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w600),
                                                         ),
-                                                        children: [
-                                                          TextSpan(
-                                                            text: getCurrency(),
+                                                        TextSpan(
+                                                            text: "5,000",
                                                             style: TextStyle(
-                                                                decoration:
-                                                                    TextDecoration
-                                                                        .lineThrough,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w600),
-                                                          ),
-                                                          TextSpan(
-                                                              text: "5,000",
-                                                              style: TextStyle(
-                                                                fontFamily:
-                                                                    "Clash Grotesk SemiBold",
-                                                              ))
-                                                        ]),
-                                                  ),
-                                                ],
-                                              )
-                                            ],
-                                          ),
+                                                              fontFamily:
+                                                                  "Clash Grotesk SemiBold",
+                                                            ))
+                                                      ]),
+                                                ),
+                                              ],
+                                            )
+                                          ],
                                         ),
                                       ],
                                     ),
-                                    Padding(
-                                      padding: EdgeInsets.symmetric(
-                                        vertical: size.height * 0.01778,
-                                      ),
-                                      child: MySeparator(
-                                        color: AppColors.subWhite2,
-                                      ),
+                                    MySeparator(
+                                      color: AppColors.subWhite2,
                                     ),
                                     Row(
                                       children: [
@@ -252,11 +249,13 @@ class Tabs extends StatelessWidget {
                                           ],
                                         ),
                                         SizedBox(width: size.width * 0.0385),
-                                        SizedBox(
-                                          width: size.width * 0.6634,
+                                        Expanded(
                                           child: Column(
+                                            mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
                                                 MainAxisAlignment.spaceBetween,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.stretch,
                                             children: [
                                               Row(
                                                 mainAxisAlignment:
@@ -361,127 +360,124 @@ class Tabs extends StatelessWidget {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Container(
-                                          height: size.height * 0.053325,
-                                          width: size.width * 0.115425,
-                                          decoration: BoxDecoration(
-                                            shape: BoxShape.circle,
-                                            color: AppColors.subWhite2,
-                                            image: DecorationImage(
-                                              image: AssetImage(
-                                                  "assets/images/upcoming2.png"),
+                                        Row(
+                                          children: [
+                                            Container(
+                                              height: size.height * 0.053325,
+                                              width: size.width * 0.115425,
+                                              decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                color: AppColors.subWhite2,
+                                                image: DecorationImage(
+                                                  image: AssetImage(
+                                                      "assets/images/upcoming2.png"),
+                                                ),
+                                              ),
                                             ),
-                                          ),
+                                            SizedBox(
+                                              width: size.width * 0.038475,
+                                            ),
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
+                                                    text: "Ikechukwu Francis",
+                                                    style: TextStyle(
+                                                      fontFamily:
+                                                          "Clash Grotesk SemiBold",
+                                                      fontSize: 14,
+                                                      color: AppColors.black,
+                                                    ),
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  height:
+                                                      size.height * 0.005925,
+                                                ),
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
+                                                    text: "3 hrs ago",
+                                                    style: TextStyle(
+                                                      fontFamily: "DM Sans",
+                                                      fontSize: 12,
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                      color:
+                                                          AppColors.subBlack2,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
                                         ),
-                                        SizedBox(
-                                          width: size.width * 0.038475,
-                                        ),
-                                        SizedBox(
-                                          width: size.width * 0.599,
-                                          child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            children: [
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                      text: "Ikechukwu Francis",
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.end,
+                                              children: [
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
+                                                    text: "Trip Cost",
+                                                    style: TextStyle(
+                                                      fontFamily: "DM Sans",
+                                                      fontSize: 12,
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                      color:
+                                                          AppColors.subBlack2,
+                                                    ),
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  height:
+                                                      size.height * 0.005925,
+                                                ),
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
                                                       style: TextStyle(
-                                                        fontFamily:
-                                                            "Clash Grotesk SemiBold",
                                                         fontSize: 14,
                                                         color: AppColors.black,
                                                       ),
-                                                    ),
-                                                  ),
-                                                  SizedBox(
-                                                    height:
-                                                        size.height * 0.005925,
-                                                  ),
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                      text: "3 hrs ago",
-                                                      style: TextStyle(
-                                                        fontFamily: "DM Sans",
-                                                        fontSize: 12,
-                                                        fontWeight:
-                                                            FontWeight.w700,
-                                                        color:
-                                                            AppColors.subBlack2,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.end,
-                                                children: [
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                      text: "Trip Cost",
-                                                      style: TextStyle(
-                                                        fontFamily: "DM Sans",
-                                                        fontSize: 12,
-                                                        fontWeight:
-                                                            FontWeight.w700,
-                                                        color:
-                                                            AppColors.subBlack2,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  SizedBox(
-                                                    height:
-                                                        size.height * 0.005925,
-                                                  ),
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                        style: TextStyle(
-                                                          fontSize: 14,
-                                                          color:
-                                                              AppColors.black,
+                                                      children: [
+                                                        TextSpan(
+                                                          text: getCurrency(),
+                                                          style: TextStyle(
+                                                              decoration:
+                                                                  TextDecoration
+                                                                      .lineThrough,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w600),
                                                         ),
-                                                        children: [
-                                                          TextSpan(
-                                                            text: getCurrency(),
+                                                        TextSpan(
+                                                            text: "2,700",
                                                             style: TextStyle(
-                                                                decoration:
-                                                                    TextDecoration
-                                                                        .lineThrough,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w600),
-                                                          ),
-                                                          TextSpan(
-                                                              text: "2,700",
-                                                              style: TextStyle(
-                                                                fontFamily:
-                                                                    "Clash Grotesk SemiBold",
-                                                              ))
-                                                        ]),
-                                                  ),
-                                                ],
-                                              )
-                                            ],
-                                          ),
+                                                              fontFamily:
+                                                                  "Clash Grotesk SemiBold",
+                                                            ))
+                                                      ]),
+                                                ),
+                                              ],
+                                            )
+                                          ],
                                         ),
                                       ],
                                     ),
-                                    Padding(
-                                      padding: EdgeInsets.symmetric(
-                                        vertical: size.height * 0.01778,
-                                      ),
-                                      child: MySeparator(
-                                        color: AppColors.subWhite2,
-                                      ),
+                                    MySeparator(
+                                      color: AppColors.subWhite2,
                                     ),
                                     Row(
                                       children: [
@@ -502,11 +498,13 @@ class Tabs extends StatelessWidget {
                                           ],
                                         ),
                                         SizedBox(width: size.width * 0.0385),
-                                        SizedBox(
-                                          width: size.width * 0.6634,
+                                        Expanded(
                                           child: Column(
+                                            mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
                                                 MainAxisAlignment.spaceBetween,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.stretch,
                                             children: [
                                               Row(
                                                 mainAxisAlignment:
@@ -611,123 +609,120 @@ class Tabs extends StatelessWidget {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Container(
-                                          height: size.height * 0.053325,
-                                          width: size.width * 0.115425,
-                                          decoration: BoxDecoration(
-                                            shape: BoxShape.circle,
-                                            color: AppColors.subWhite2,
-                                          ),
+                                        Row(
+                                          children: [
+                                            Container(
+                                              height: size.height * 0.053325,
+                                              width: size.width * 0.115425,
+                                              decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                color: AppColors.subWhite2,
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              width: size.width * 0.038475,
+                                            ),
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
+                                                    text: "Bolanle Adeshina",
+                                                    style: TextStyle(
+                                                      fontFamily:
+                                                          "Clash Grotesk SemiBold",
+                                                      fontSize: 14,
+                                                      color: AppColors.black,
+                                                    ),
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  height:
+                                                      size.height * 0.005925,
+                                                ),
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
+                                                    text: "5 hrs ago",
+                                                    style: TextStyle(
+                                                      fontFamily: "DM Sans",
+                                                      fontSize: 12,
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                      color:
+                                                          AppColors.subBlack2,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
                                         ),
-                                        SizedBox(
-                                          width: size.width * 0.038475,
-                                        ),
-                                        SizedBox(
-                                          width: size.width * 0.599,
-                                          child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            children: [
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                      text: "Bolanle Adeshina",
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.end,
+                                              children: [
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
+                                                    text: "Trip Cost",
+                                                    style: TextStyle(
+                                                      fontFamily: "DM Sans",
+                                                      fontSize: 12,
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                      color:
+                                                          AppColors.subBlack2,
+                                                    ),
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  height:
+                                                      size.height * 0.005925,
+                                                ),
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
                                                       style: TextStyle(
-                                                        fontFamily:
-                                                            "Clash Grotesk SemiBold",
                                                         fontSize: 14,
                                                         color: AppColors.black,
                                                       ),
-                                                    ),
-                                                  ),
-                                                  SizedBox(
-                                                    height:
-                                                        size.height * 0.005925,
-                                                  ),
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                      text: "5 hrs ago",
-                                                      style: TextStyle(
-                                                        fontFamily: "DM Sans",
-                                                        fontSize: 12,
-                                                        fontWeight:
-                                                            FontWeight.w700,
-                                                        color:
-                                                            AppColors.subBlack2,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.end,
-                                                children: [
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                      text: "Trip Cost",
-                                                      style: TextStyle(
-                                                        fontFamily: "DM Sans",
-                                                        fontSize: 12,
-                                                        fontWeight:
-                                                            FontWeight.w700,
-                                                        color:
-                                                            AppColors.subBlack2,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  SizedBox(
-                                                    height:
-                                                        size.height * 0.005925,
-                                                  ),
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                        style: TextStyle(
-                                                          fontSize: 14,
-                                                          color:
-                                                              AppColors.black,
+                                                      children: [
+                                                        TextSpan(
+                                                          text: getCurrency(),
+                                                          style: TextStyle(
+                                                              decoration:
+                                                                  TextDecoration
+                                                                      .lineThrough,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w600),
                                                         ),
-                                                        children: [
-                                                          TextSpan(
-                                                            text: getCurrency(),
+                                                        TextSpan(
+                                                            text: "3,200",
                                                             style: TextStyle(
-                                                                decoration:
-                                                                    TextDecoration
-                                                                        .lineThrough,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w600),
-                                                          ),
-                                                          TextSpan(
-                                                              text: "3,200",
-                                                              style: TextStyle(
-                                                                fontFamily:
-                                                                    "Clash Grotesk SemiBold",
-                                                              ))
-                                                        ]),
-                                                  ),
-                                                ],
-                                              )
-                                            ],
-                                          ),
+                                                              fontFamily:
+                                                                  "Clash Grotesk SemiBold",
+                                                            ))
+                                                      ]),
+                                                ),
+                                              ],
+                                            )
+                                          ],
                                         ),
                                       ],
                                     ),
-                                    Padding(
-                                      padding: EdgeInsets.symmetric(
-                                        vertical: size.height * 0.01778,
-                                      ),
-                                      child: MySeparator(
-                                        color: AppColors.subWhite2,
-                                      ),
+                                    MySeparator(
+                                      color: AppColors.subWhite2,
                                     ),
                                     Row(
                                       children: [
@@ -750,8 +745,7 @@ class Tabs extends StatelessWidget {
                                         SizedBox(
                                           width: size.width * 0.0385,
                                         ),
-                                        SizedBox(
-                                          width: size.width * 0.6634,
+                                        Expanded(
                                           child: Column(
                                             mainAxisAlignment:
                                                 MainAxisAlignment.spaceBetween,
@@ -875,123 +869,120 @@ class Tabs extends StatelessWidget {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Container(
-                                          height: size.height * 0.053325,
-                                          width: size.width * 0.115425,
-                                          decoration: BoxDecoration(
-                                            shape: BoxShape.circle,
-                                            color: AppColors.subWhite2,
-                                          ),
+                                        Row(
+                                          children: [
+                                            Container(
+                                              height: size.height * 0.053325,
+                                              width: size.width * 0.115425,
+                                              decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                color: AppColors.subWhite2,
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              width: size.width * 0.038475,
+                                            ),
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
+                                                    text: "Aisha Ahmed",
+                                                    style: TextStyle(
+                                                      fontFamily:
+                                                          "Clash Grotesk SemiBold",
+                                                      fontSize: 14,
+                                                      color: AppColors.black,
+                                                    ),
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  height:
+                                                      size.height * 0.005925,
+                                                ),
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
+                                                    text: "2 days ago",
+                                                    style: TextStyle(
+                                                      fontFamily: "DM Sans",
+                                                      fontSize: 12,
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                      color:
+                                                          AppColors.subBlack2,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
                                         ),
-                                        SizedBox(
-                                          width: size.width * 0.038475,
-                                        ),
-                                        SizedBox(
-                                          width: size.width * 0.599,
-                                          child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            children: [
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                      text: "Aisha Ahmed",
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.end,
+                                              children: [
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
+                                                    text: "Trip Cost",
+                                                    style: TextStyle(
+                                                      fontFamily: "DM Sans",
+                                                      fontSize: 12,
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                      color:
+                                                          AppColors.subBlack2,
+                                                    ),
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  height:
+                                                      size.height * 0.005925,
+                                                ),
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
                                                       style: TextStyle(
-                                                        fontFamily:
-                                                            "Clash Grotesk SemiBold",
                                                         fontSize: 14,
                                                         color: AppColors.black,
                                                       ),
-                                                    ),
-                                                  ),
-                                                  SizedBox(
-                                                    height:
-                                                        size.height * 0.005925,
-                                                  ),
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                      text: "2 days ago",
-                                                      style: TextStyle(
-                                                        fontFamily: "DM Sans",
-                                                        fontSize: 12,
-                                                        fontWeight:
-                                                            FontWeight.w700,
-                                                        color:
-                                                            AppColors.subBlack2,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.end,
-                                                children: [
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                      text: "Trip Cost",
-                                                      style: TextStyle(
-                                                        fontFamily: "DM Sans",
-                                                        fontSize: 12,
-                                                        fontWeight:
-                                                            FontWeight.w700,
-                                                        color:
-                                                            AppColors.subBlack2,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  SizedBox(
-                                                    height:
-                                                        size.height * 0.005925,
-                                                  ),
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                        style: TextStyle(
-                                                          fontSize: 14,
-                                                          color:
-                                                              AppColors.black,
+                                                      children: [
+                                                        TextSpan(
+                                                          text: getCurrency(),
+                                                          style: TextStyle(
+                                                              decoration:
+                                                                  TextDecoration
+                                                                      .lineThrough,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w600),
                                                         ),
-                                                        children: [
-                                                          TextSpan(
-                                                            text: getCurrency(),
+                                                        TextSpan(
+                                                            text: "4,500",
                                                             style: TextStyle(
-                                                                decoration:
-                                                                    TextDecoration
-                                                                        .lineThrough,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w600),
-                                                          ),
-                                                          TextSpan(
-                                                              text: "4,500",
-                                                              style: TextStyle(
-                                                                fontFamily:
-                                                                    "Clash Grotesk SemiBold",
-                                                              ))
-                                                        ]),
-                                                  ),
-                                                ],
-                                              )
-                                            ],
-                                          ),
+                                                              fontFamily:
+                                                                  "Clash Grotesk SemiBold",
+                                                            ))
+                                                      ]),
+                                                ),
+                                              ],
+                                            )
+                                          ],
                                         ),
                                       ],
                                     ),
-                                    Padding(
-                                      padding: EdgeInsets.symmetric(
-                                        vertical: size.height * 0.01778,
-                                      ),
-                                      child: MySeparator(
-                                        color: AppColors.subWhite2,
-                                      ),
+                                    MySeparator(
+                                      color: AppColors.subWhite2,
                                     ),
                                     Row(
                                       children: [
@@ -1012,8 +1003,7 @@ class Tabs extends StatelessWidget {
                                           ],
                                         ),
                                         SizedBox(width: size.width * 0.0385),
-                                        SizedBox(
-                                          width: size.width * 0.6634,
+                                        Expanded(
                                           child: Column(
                                             mainAxisAlignment:
                                                 MainAxisAlignment.spaceBetween,
@@ -1121,123 +1111,120 @@ class Tabs extends StatelessWidget {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Container(
-                                          height: size.height * 0.053325,
-                                          width: size.width * 0.115425,
-                                          decoration: BoxDecoration(
-                                            shape: BoxShape.circle,
-                                            color: AppColors.subWhite2,
-                                          ),
+                                        Row(
+                                          children: [
+                                            Container(
+                                              height: size.height * 0.053325,
+                                              width: size.width * 0.115425,
+                                              decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                color: AppColors.subWhite2,
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              width: size.width * 0.038475,
+                                            ),
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
+                                                    text: "Damilare Ogunladi",
+                                                    style: TextStyle(
+                                                      fontFamily:
+                                                          "Clash Grotesk SemiBold",
+                                                      fontSize: 14,
+                                                      color: AppColors.black,
+                                                    ),
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  height:
+                                                      size.height * 0.005925,
+                                                ),
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
+                                                    text: "2 days ago",
+                                                    style: TextStyle(
+                                                      fontFamily: "DM Sans",
+                                                      fontSize: 12,
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                      color:
+                                                          AppColors.subBlack2,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
                                         ),
-                                        SizedBox(
-                                          width: size.width * 0.038475,
-                                        ),
-                                        SizedBox(
-                                          width: size.width * 0.599,
-                                          child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            children: [
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                      text: "Damilare Ogunladi",
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.end,
+                                              children: [
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
+                                                    text: "Trip Cost",
+                                                    style: TextStyle(
+                                                      fontFamily: "DM Sans",
+                                                      fontSize: 12,
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                      color:
+                                                          AppColors.subBlack2,
+                                                    ),
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  height:
+                                                      size.height * 0.005925,
+                                                ),
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
                                                       style: TextStyle(
-                                                        fontFamily:
-                                                            "Clash Grotesk SemiBold",
                                                         fontSize: 14,
                                                         color: AppColors.black,
                                                       ),
-                                                    ),
-                                                  ),
-                                                  SizedBox(
-                                                    height:
-                                                        size.height * 0.005925,
-                                                  ),
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                      text: "2 days ago",
-                                                      style: TextStyle(
-                                                        fontFamily: "DM Sans",
-                                                        fontSize: 12,
-                                                        fontWeight:
-                                                            FontWeight.w700,
-                                                        color:
-                                                            AppColors.subBlack2,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.end,
-                                                children: [
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                      text: "Trip Cost",
-                                                      style: TextStyle(
-                                                        fontFamily: "DM Sans",
-                                                        fontSize: 12,
-                                                        fontWeight:
-                                                            FontWeight.w700,
-                                                        color:
-                                                            AppColors.subBlack2,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  SizedBox(
-                                                    height:
-                                                        size.height * 0.005925,
-                                                  ),
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                        style: TextStyle(
-                                                          fontSize: 14,
-                                                          color:
-                                                              AppColors.black,
+                                                      children: [
+                                                        TextSpan(
+                                                          text: getCurrency(),
+                                                          style: TextStyle(
+                                                              decoration:
+                                                                  TextDecoration
+                                                                      .lineThrough,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w600),
                                                         ),
-                                                        children: [
-                                                          TextSpan(
-                                                            text: getCurrency(),
+                                                        TextSpan(
+                                                            text: "7,400",
                                                             style: TextStyle(
-                                                                decoration:
-                                                                    TextDecoration
-                                                                        .lineThrough,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w600),
-                                                          ),
-                                                          TextSpan(
-                                                              text: "7,400",
-                                                              style: TextStyle(
-                                                                fontFamily:
-                                                                    "Clash Grotesk SemiBold",
-                                                              ))
-                                                        ]),
-                                                  ),
-                                                ],
-                                              )
-                                            ],
-                                          ),
+                                                              fontFamily:
+                                                                  "Clash Grotesk SemiBold",
+                                                            ))
+                                                      ]),
+                                                ),
+                                              ],
+                                            )
+                                          ],
                                         ),
                                       ],
                                     ),
-                                    Padding(
-                                      padding: EdgeInsets.symmetric(
-                                        vertical: size.height * 0.01778,
-                                      ),
-                                      child: MySeparator(
-                                        color: AppColors.subWhite2,
-                                      ),
+                                    MySeparator(
+                                      color: AppColors.subWhite2,
                                     ),
                                     Row(
                                       children: [
@@ -1258,8 +1245,7 @@ class Tabs extends StatelessWidget {
                                           ],
                                         ),
                                         SizedBox(width: size.width * 0.0385),
-                                        SizedBox(
-                                          width: size.width * 0.6634,
+                                        Expanded(
                                           child: Column(
                                             mainAxisAlignment:
                                                 MainAxisAlignment.spaceBetween,
@@ -1402,127 +1388,124 @@ class Tabs extends StatelessWidget {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Container(
-                                          height: size.height * 0.053325,
-                                          width: size.width * 0.115425,
-                                          decoration: BoxDecoration(
-                                            shape: BoxShape.circle,
-                                            color: AppColors.subWhite2,
-                                            image: DecorationImage(
-                                              image: AssetImage(
-                                                  "assets/images/complete1.png"),
+                                        Row(
+                                          children: [
+                                            Container(
+                                              height: size.height * 0.053325,
+                                              width: size.width * 0.115425,
+                                              decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                color: AppColors.subWhite2,
+                                                image: DecorationImage(
+                                                  image: AssetImage(
+                                                      "assets/images/complete1.png"),
+                                                ),
+                                              ),
                                             ),
-                                          ),
+                                            SizedBox(
+                                              width: size.width * 0.038475,
+                                            ),
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
+                                                    text: "Bolanle Adeshina",
+                                                    style: TextStyle(
+                                                      fontFamily:
+                                                          "Clash Grotesk SemiBold",
+                                                      fontSize: 14,
+                                                      color: AppColors.black,
+                                                    ),
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  height:
+                                                      size.height * 0.005925,
+                                                ),
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
+                                                    text: "50 mins ago",
+                                                    style: TextStyle(
+                                                      fontFamily: "DM Sans",
+                                                      fontSize: 12,
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                      color:
+                                                          AppColors.subBlack2,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
                                         ),
-                                        SizedBox(
-                                          width: size.width * 0.038475,
-                                        ),
-                                        SizedBox(
-                                          width: size.width * 0.599,
-                                          child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            children: [
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                      text: "Bolanle Adeshina",
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.end,
+                                              children: [
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
+                                                    text: "Trip Cost",
+                                                    style: TextStyle(
+                                                      fontFamily: "DM Sans",
+                                                      fontSize: 12,
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                      color:
+                                                          AppColors.subBlack2,
+                                                    ),
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  height:
+                                                      size.height * 0.005925,
+                                                ),
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
                                                       style: TextStyle(
-                                                        fontFamily:
-                                                            "Clash Grotesk SemiBold",
                                                         fontSize: 14,
                                                         color: AppColors.black,
                                                       ),
-                                                    ),
-                                                  ),
-                                                  SizedBox(
-                                                    height:
-                                                        size.height * 0.005925,
-                                                  ),
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                      text: "50 mins ago",
-                                                      style: TextStyle(
-                                                        fontFamily: "DM Sans",
-                                                        fontSize: 12,
-                                                        fontWeight:
-                                                            FontWeight.w700,
-                                                        color:
-                                                            AppColors.subBlack2,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.end,
-                                                children: [
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                      text: "Trip Cost",
-                                                      style: TextStyle(
-                                                        fontFamily: "DM Sans",
-                                                        fontSize: 12,
-                                                        fontWeight:
-                                                            FontWeight.w700,
-                                                        color:
-                                                            AppColors.subBlack2,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  SizedBox(
-                                                    height:
-                                                        size.height * 0.005925,
-                                                  ),
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                        style: TextStyle(
-                                                          fontSize: 14,
-                                                          color:
-                                                              AppColors.black,
+                                                      children: [
+                                                        TextSpan(
+                                                          text: getCurrency(),
+                                                          style: TextStyle(
+                                                              decoration:
+                                                                  TextDecoration
+                                                                      .lineThrough,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w600),
                                                         ),
-                                                        children: [
-                                                          TextSpan(
-                                                            text: getCurrency(),
+                                                        TextSpan(
+                                                            text: "5,000",
                                                             style: TextStyle(
-                                                                decoration:
-                                                                    TextDecoration
-                                                                        .lineThrough,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w600),
-                                                          ),
-                                                          TextSpan(
-                                                              text: "5,000",
-                                                              style: TextStyle(
-                                                                fontFamily:
-                                                                    "Clash Grotesk SemiBold",
-                                                              ))
-                                                        ]),
-                                                  ),
-                                                ],
-                                              )
-                                            ],
-                                          ),
+                                                              fontFamily:
+                                                                  "Clash Grotesk SemiBold",
+                                                            ))
+                                                      ]),
+                                                ),
+                                              ],
+                                            )
+                                          ],
                                         ),
                                       ],
                                     ),
-                                    Padding(
-                                      padding: EdgeInsets.symmetric(
-                                        vertical: size.height * 0.01778,
-                                      ),
-                                      child: MySeparator(
-                                        color: AppColors.subWhite2,
-                                      ),
+                                    MySeparator(
+                                      color: AppColors.subWhite2,
                                     ),
                                     Row(
                                       children: [
@@ -1543,8 +1526,7 @@ class Tabs extends StatelessWidget {
                                           ],
                                         ),
                                         SizedBox(width: size.width * 0.0385),
-                                        SizedBox(
-                                          width: size.width * 0.6634,
+                                        Expanded(
                                           child: Column(
                                             mainAxisAlignment:
                                                 MainAxisAlignment.spaceBetween,
@@ -1652,127 +1634,124 @@ class Tabs extends StatelessWidget {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Container(
-                                          height: size.height * 0.053325,
-                                          width: size.width * 0.115425,
-                                          decoration: BoxDecoration(
-                                            shape: BoxShape.circle,
-                                            color: AppColors.subWhite2,
-                                            image: DecorationImage(
-                                              image: AssetImage(
-                                                  "assets/images/complete2.png"),
+                                        Row(
+                                          children: [
+                                            Container(
+                                              height: size.height * 0.053325,
+                                              width: size.width * 0.115425,
+                                              decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                color: AppColors.subWhite2,
+                                                image: DecorationImage(
+                                                  image: AssetImage(
+                                                      "assets/images/complete2.png"),
+                                                ),
+                                              ),
                                             ),
-                                          ),
+                                            SizedBox(
+                                              width: size.width * 0.038475,
+                                            ),
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
+                                                    text: "Ikechukwu Francis",
+                                                    style: TextStyle(
+                                                      fontFamily:
+                                                          "Clash Grotesk SemiBold",
+                                                      fontSize: 14,
+                                                      color: AppColors.black,
+                                                    ),
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  height:
+                                                      size.height * 0.005925,
+                                                ),
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
+                                                    text: "3 hrs ago",
+                                                    style: TextStyle(
+                                                      fontFamily: "DM Sans",
+                                                      fontSize: 12,
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                      color:
+                                                          AppColors.subBlack2,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
                                         ),
-                                        SizedBox(
-                                          width: size.width * 0.038475,
-                                        ),
-                                        SizedBox(
-                                          width: size.width * 0.599,
-                                          child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            children: [
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                      text: "Ikechukwu Francis",
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.end,
+                                              children: [
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
+                                                    text: "Trip Cost",
+                                                    style: TextStyle(
+                                                      fontFamily: "DM Sans",
+                                                      fontSize: 12,
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                      color:
+                                                          AppColors.subBlack2,
+                                                    ),
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  height:
+                                                      size.height * 0.005925,
+                                                ),
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
                                                       style: TextStyle(
-                                                        fontFamily:
-                                                            "Clash Grotesk SemiBold",
                                                         fontSize: 14,
                                                         color: AppColors.black,
                                                       ),
-                                                    ),
-                                                  ),
-                                                  SizedBox(
-                                                    height:
-                                                        size.height * 0.005925,
-                                                  ),
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                      text: "3 hrs ago",
-                                                      style: TextStyle(
-                                                        fontFamily: "DM Sans",
-                                                        fontSize: 12,
-                                                        fontWeight:
-                                                            FontWeight.w700,
-                                                        color:
-                                                            AppColors.subBlack2,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.end,
-                                                children: [
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                      text: "Trip Cost",
-                                                      style: TextStyle(
-                                                        fontFamily: "DM Sans",
-                                                        fontSize: 12,
-                                                        fontWeight:
-                                                            FontWeight.w700,
-                                                        color:
-                                                            AppColors.subBlack2,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  SizedBox(
-                                                    height:
-                                                        size.height * 0.005925,
-                                                  ),
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                        style: TextStyle(
-                                                          fontSize: 14,
-                                                          color:
-                                                              AppColors.black,
+                                                      children: [
+                                                        TextSpan(
+                                                          text: getCurrency(),
+                                                          style: TextStyle(
+                                                              decoration:
+                                                                  TextDecoration
+                                                                      .lineThrough,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w600),
                                                         ),
-                                                        children: [
-                                                          TextSpan(
-                                                            text: getCurrency(),
+                                                        TextSpan(
+                                                            text: "2,700",
                                                             style: TextStyle(
-                                                                decoration:
-                                                                    TextDecoration
-                                                                        .lineThrough,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w600),
-                                                          ),
-                                                          TextSpan(
-                                                              text: "2,700",
-                                                              style: TextStyle(
-                                                                fontFamily:
-                                                                    "Clash Grotesk SemiBold",
-                                                              ))
-                                                        ]),
-                                                  ),
-                                                ],
-                                              )
-                                            ],
-                                          ),
+                                                              fontFamily:
+                                                                  "Clash Grotesk SemiBold",
+                                                            ))
+                                                      ]),
+                                                ),
+                                              ],
+                                            )
+                                          ],
                                         ),
                                       ],
                                     ),
-                                    Padding(
-                                      padding: EdgeInsets.symmetric(
-                                        vertical: size.height * 0.01778,
-                                      ),
-                                      child: MySeparator(
-                                        color: AppColors.subWhite2,
-                                      ),
+                                    MySeparator(
+                                      color: AppColors.subWhite2,
                                     ),
                                     Row(
                                       children: [
@@ -1793,8 +1772,7 @@ class Tabs extends StatelessWidget {
                                           ],
                                         ),
                                         SizedBox(width: size.width * 0.0385),
-                                        SizedBox(
-                                          width: size.width * 0.6634,
+                                        Expanded(
                                           child: Column(
                                             mainAxisAlignment:
                                                 MainAxisAlignment.spaceBetween,
@@ -1902,123 +1880,120 @@ class Tabs extends StatelessWidget {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Container(
-                                          height: size.height * 0.053325,
-                                          width: size.width * 0.115425,
-                                          decoration: BoxDecoration(
-                                            shape: BoxShape.circle,
-                                            color: AppColors.subWhite2,
-                                          ),
+                                        Row(
+                                          children: [
+                                            Container(
+                                              height: size.height * 0.053325,
+                                              width: size.width * 0.115425,
+                                              decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                color: AppColors.subWhite2,
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              width: size.width * 0.038475,
+                                            ),
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
+                                                    text: "Bolanle Adeshina",
+                                                    style: TextStyle(
+                                                      fontFamily:
+                                                          "Clash Grotesk SemiBold",
+                                                      fontSize: 14,
+                                                      color: AppColors.black,
+                                                    ),
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  height:
+                                                      size.height * 0.005925,
+                                                ),
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
+                                                    text: "5 hrs ago",
+                                                    style: TextStyle(
+                                                      fontFamily: "DM Sans",
+                                                      fontSize: 12,
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                      color:
+                                                          AppColors.subBlack2,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
                                         ),
-                                        SizedBox(
-                                          width: size.width * 0.038475,
-                                        ),
-                                        SizedBox(
-                                          width: size.width * 0.599,
-                                          child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            children: [
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                      text: "Bolanle Adeshina",
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.end,
+                                              children: [
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
+                                                    text: "Trip Cost",
+                                                    style: TextStyle(
+                                                      fontFamily: "DM Sans",
+                                                      fontSize: 12,
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                      color:
+                                                          AppColors.subBlack2,
+                                                    ),
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  height:
+                                                      size.height * 0.005925,
+                                                ),
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
                                                       style: TextStyle(
-                                                        fontFamily:
-                                                            "Clash Grotesk SemiBold",
                                                         fontSize: 14,
                                                         color: AppColors.black,
                                                       ),
-                                                    ),
-                                                  ),
-                                                  SizedBox(
-                                                    height:
-                                                        size.height * 0.005925,
-                                                  ),
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                      text: "5 hrs ago",
-                                                      style: TextStyle(
-                                                        fontFamily: "DM Sans",
-                                                        fontSize: 12,
-                                                        fontWeight:
-                                                            FontWeight.w700,
-                                                        color:
-                                                            AppColors.subBlack2,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.end,
-                                                children: [
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                      text: "Trip Cost",
-                                                      style: TextStyle(
-                                                        fontFamily: "DM Sans",
-                                                        fontSize: 12,
-                                                        fontWeight:
-                                                            FontWeight.w700,
-                                                        color:
-                                                            AppColors.subBlack2,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  SizedBox(
-                                                    height:
-                                                        size.height * 0.005925,
-                                                  ),
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                        style: TextStyle(
-                                                          fontSize: 14,
-                                                          color:
-                                                              AppColors.black,
+                                                      children: [
+                                                        TextSpan(
+                                                          text: getCurrency(),
+                                                          style: TextStyle(
+                                                              decoration:
+                                                                  TextDecoration
+                                                                      .lineThrough,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w600),
                                                         ),
-                                                        children: [
-                                                          TextSpan(
-                                                            text: getCurrency(),
+                                                        TextSpan(
+                                                            text: "3,200",
                                                             style: TextStyle(
-                                                                decoration:
-                                                                    TextDecoration
-                                                                        .lineThrough,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w600),
-                                                          ),
-                                                          TextSpan(
-                                                              text: "3,200",
-                                                              style: TextStyle(
-                                                                fontFamily:
-                                                                    "Clash Grotesk SemiBold",
-                                                              ))
-                                                        ]),
-                                                  ),
-                                                ],
-                                              )
-                                            ],
-                                          ),
+                                                              fontFamily:
+                                                                  "Clash Grotesk SemiBold",
+                                                            ))
+                                                      ]),
+                                                ),
+                                              ],
+                                            )
+                                          ],
                                         ),
                                       ],
                                     ),
-                                    Padding(
-                                      padding: EdgeInsets.symmetric(
-                                        vertical: size.height * 0.01778,
-                                      ),
-                                      child: MySeparator(
-                                        color: AppColors.subWhite2,
-                                      ),
+                                    MySeparator(
+                                      color: AppColors.subWhite2,
                                     ),
                                     Row(
                                       children: [
@@ -2041,8 +2016,7 @@ class Tabs extends StatelessWidget {
                                         SizedBox(
                                           width: size.width * 0.0385,
                                         ),
-                                        SizedBox(
-                                          width: size.width * 0.6634,
+                                        Expanded(
                                           child: Column(
                                             mainAxisAlignment:
                                                 MainAxisAlignment.spaceBetween,
@@ -2166,123 +2140,120 @@ class Tabs extends StatelessWidget {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Container(
-                                          height: size.height * 0.053325,
-                                          width: size.width * 0.115425,
-                                          decoration: BoxDecoration(
-                                            shape: BoxShape.circle,
-                                            color: AppColors.subWhite2,
-                                          ),
+                                        Row(
+                                          children: [
+                                            Container(
+                                              height: size.height * 0.053325,
+                                              width: size.width * 0.115425,
+                                              decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                color: AppColors.subWhite2,
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              width: size.width * 0.038475,
+                                            ),
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
+                                                    text: "Aisha Ahmed",
+                                                    style: TextStyle(
+                                                      fontFamily:
+                                                          "Clash Grotesk SemiBold",
+                                                      fontSize: 14,
+                                                      color: AppColors.black,
+                                                    ),
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  height:
+                                                      size.height * 0.005925,
+                                                ),
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
+                                                    text: "2 days ago",
+                                                    style: TextStyle(
+                                                      fontFamily: "DM Sans",
+                                                      fontSize: 12,
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                      color:
+                                                          AppColors.subBlack2,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
                                         ),
-                                        SizedBox(
-                                          width: size.width * 0.038475,
-                                        ),
-                                        SizedBox(
-                                          width: size.width * 0.599,
-                                          child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            children: [
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                      text: "Aisha Ahmed",
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.end,
+                                              children: [
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
+                                                    text: "Trip Cost",
+                                                    style: TextStyle(
+                                                      fontFamily: "DM Sans",
+                                                      fontSize: 12,
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                      color:
+                                                          AppColors.subBlack2,
+                                                    ),
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  height:
+                                                      size.height * 0.005925,
+                                                ),
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
                                                       style: TextStyle(
-                                                        fontFamily:
-                                                            "Clash Grotesk SemiBold",
                                                         fontSize: 14,
                                                         color: AppColors.black,
                                                       ),
-                                                    ),
-                                                  ),
-                                                  SizedBox(
-                                                    height:
-                                                        size.height * 0.005925,
-                                                  ),
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                      text: "2 days ago",
-                                                      style: TextStyle(
-                                                        fontFamily: "DM Sans",
-                                                        fontSize: 12,
-                                                        fontWeight:
-                                                            FontWeight.w700,
-                                                        color:
-                                                            AppColors.subBlack2,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.end,
-                                                children: [
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                      text: "Trip Cost",
-                                                      style: TextStyle(
-                                                        fontFamily: "DM Sans",
-                                                        fontSize: 12,
-                                                        fontWeight:
-                                                            FontWeight.w700,
-                                                        color:
-                                                            AppColors.subBlack2,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  SizedBox(
-                                                    height:
-                                                        size.height * 0.005925,
-                                                  ),
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                        style: TextStyle(
-                                                          fontSize: 14,
-                                                          color:
-                                                              AppColors.black,
+                                                      children: [
+                                                        TextSpan(
+                                                          text: getCurrency(),
+                                                          style: TextStyle(
+                                                              decoration:
+                                                                  TextDecoration
+                                                                      .lineThrough,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w600),
                                                         ),
-                                                        children: [
-                                                          TextSpan(
-                                                            text: getCurrency(),
+                                                        TextSpan(
+                                                            text: "4,500",
                                                             style: TextStyle(
-                                                                decoration:
-                                                                    TextDecoration
-                                                                        .lineThrough,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w600),
-                                                          ),
-                                                          TextSpan(
-                                                              text: "4,500",
-                                                              style: TextStyle(
-                                                                fontFamily:
-                                                                    "Clash Grotesk SemiBold",
-                                                              ))
-                                                        ]),
-                                                  ),
-                                                ],
-                                              )
-                                            ],
-                                          ),
+                                                              fontFamily:
+                                                                  "Clash Grotesk SemiBold",
+                                                            ))
+                                                      ]),
+                                                ),
+                                              ],
+                                            )
+                                          ],
                                         ),
                                       ],
                                     ),
-                                    Padding(
-                                      padding: EdgeInsets.symmetric(
-                                        vertical: size.height * 0.01778,
-                                      ),
-                                      child: MySeparator(
-                                        color: AppColors.subWhite2,
-                                      ),
+                                    MySeparator(
+                                      color: AppColors.subWhite2,
                                     ),
                                     Row(
                                       children: [
@@ -2303,8 +2274,7 @@ class Tabs extends StatelessWidget {
                                           ],
                                         ),
                                         SizedBox(width: size.width * 0.0385),
-                                        SizedBox(
-                                          width: size.width * 0.6634,
+                                        Expanded(
                                           child: Column(
                                             mainAxisAlignment:
                                                 MainAxisAlignment.spaceBetween,
@@ -2412,123 +2382,120 @@ class Tabs extends StatelessWidget {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Container(
-                                          height: size.height * 0.053325,
-                                          width: size.width * 0.115425,
-                                          decoration: BoxDecoration(
-                                            shape: BoxShape.circle,
-                                            color: AppColors.subWhite2,
-                                          ),
+                                        Row(
+                                          children: [
+                                            Container(
+                                              height: size.height * 0.053325,
+                                              width: size.width * 0.115425,
+                                              decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                color: AppColors.subWhite2,
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              width: size.width * 0.038475,
+                                            ),
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
+                                                    text: "Damilare Ogunladi",
+                                                    style: TextStyle(
+                                                      fontFamily:
+                                                          "Clash Grotesk SemiBold",
+                                                      fontSize: 14,
+                                                      color: AppColors.black,
+                                                    ),
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  height:
+                                                      size.height * 0.005925,
+                                                ),
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
+                                                    text: "2 days ago",
+                                                    style: TextStyle(
+                                                      fontFamily: "DM Sans",
+                                                      fontSize: 12,
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                      color:
+                                                          AppColors.subBlack2,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
                                         ),
-                                        SizedBox(
-                                          width: size.width * 0.038475,
-                                        ),
-                                        SizedBox(
-                                          width: size.width * 0.599,
-                                          child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            children: [
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                      text: "Damilare Ogunladi",
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.end,
+                                              children: [
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
+                                                    text: "Trip Cost",
+                                                    style: TextStyle(
+                                                      fontFamily: "DM Sans",
+                                                      fontSize: 12,
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                      color:
+                                                          AppColors.subBlack2,
+                                                    ),
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  height:
+                                                      size.height * 0.005925,
+                                                ),
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
                                                       style: TextStyle(
-                                                        fontFamily:
-                                                            "Clash Grotesk SemiBold",
                                                         fontSize: 14,
                                                         color: AppColors.black,
                                                       ),
-                                                    ),
-                                                  ),
-                                                  SizedBox(
-                                                    height:
-                                                        size.height * 0.005925,
-                                                  ),
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                      text: "2 days ago",
-                                                      style: TextStyle(
-                                                        fontFamily: "DM Sans",
-                                                        fontSize: 12,
-                                                        fontWeight:
-                                                            FontWeight.w700,
-                                                        color:
-                                                            AppColors.subBlack2,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.end,
-                                                children: [
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                      text: "Trip Cost",
-                                                      style: TextStyle(
-                                                        fontFamily: "DM Sans",
-                                                        fontSize: 12,
-                                                        fontWeight:
-                                                            FontWeight.w700,
-                                                        color:
-                                                            AppColors.subBlack2,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  SizedBox(
-                                                    height:
-                                                        size.height * 0.005925,
-                                                  ),
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                        style: TextStyle(
-                                                          fontSize: 14,
-                                                          color:
-                                                              AppColors.black,
+                                                      children: [
+                                                        TextSpan(
+                                                          text: getCurrency(),
+                                                          style: TextStyle(
+                                                              decoration:
+                                                                  TextDecoration
+                                                                      .lineThrough,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w600),
                                                         ),
-                                                        children: [
-                                                          TextSpan(
-                                                            text: getCurrency(),
+                                                        TextSpan(
+                                                            text: "7,400",
                                                             style: TextStyle(
-                                                                decoration:
-                                                                    TextDecoration
-                                                                        .lineThrough,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w600),
-                                                          ),
-                                                          TextSpan(
-                                                              text: "7,400",
-                                                              style: TextStyle(
-                                                                fontFamily:
-                                                                    "Clash Grotesk SemiBold",
-                                                              ))
-                                                        ]),
-                                                  ),
-                                                ],
-                                              )
-                                            ],
-                                          ),
+                                                              fontFamily:
+                                                                  "Clash Grotesk SemiBold",
+                                                            ))
+                                                      ]),
+                                                ),
+                                              ],
+                                            )
+                                          ],
                                         ),
                                       ],
                                     ),
-                                    Padding(
-                                      padding: EdgeInsets.symmetric(
-                                        vertical: size.height * 0.01778,
-                                      ),
-                                      child: MySeparator(
-                                        color: AppColors.subWhite2,
-                                      ),
+                                    MySeparator(
+                                      color: AppColors.subWhite2,
                                     ),
                                     Row(
                                       children: [
@@ -2549,8 +2516,7 @@ class Tabs extends StatelessWidget {
                                           ],
                                         ),
                                         SizedBox(width: size.width * 0.0385),
-                                        SizedBox(
-                                          width: size.width * 0.6634,
+                                        Expanded(
                                           child: Column(
                                             mainAxisAlignment:
                                                 MainAxisAlignment.spaceBetween,
@@ -2708,8 +2674,7 @@ class Tabs extends StatelessWidget {
                                         SizedBox(
                                           width: size.width * 0.038475,
                                         ),
-                                        SizedBox(
-                                          width: size.width * 0.599,
+                                        Expanded(
                                           child: Column(
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
@@ -2747,13 +2712,8 @@ class Tabs extends StatelessWidget {
                                         ),
                                       ],
                                     ),
-                                    Padding(
-                                      padding: EdgeInsets.symmetric(
-                                        vertical: size.height * 0.01778,
-                                      ),
-                                      child: MySeparator(
-                                        color: AppColors.subWhite2,
-                                      ),
+                                    MySeparator(
+                                      color: AppColors.subWhite2,
                                     ),
                                     Row(
                                       children: [
@@ -2774,8 +2734,7 @@ class Tabs extends StatelessWidget {
                                           ],
                                         ),
                                         SizedBox(width: size.width * 0.0385),
-                                        SizedBox(
-                                          width: size.width * 0.6634,
+                                        Expanded(
                                           child: Column(
                                             mainAxisAlignment:
                                                 MainAxisAlignment.spaceBetween,
@@ -2898,8 +2857,7 @@ class Tabs extends StatelessWidget {
                                         SizedBox(
                                           width: size.width * 0.038475,
                                         ),
-                                        SizedBox(
-                                          width: size.width * 0.599,
+                                        Expanded(
                                           child: Column(
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
@@ -2936,13 +2894,8 @@ class Tabs extends StatelessWidget {
                                         ),
                                       ],
                                     ),
-                                    Padding(
-                                      padding: EdgeInsets.symmetric(
-                                        vertical: size.height * 0.01778,
-                                      ),
-                                      child: MySeparator(
-                                        color: AppColors.subWhite2,
-                                      ),
+                                    MySeparator(
+                                      color: AppColors.subWhite2,
                                     ),
                                     Row(
                                       children: [
@@ -2963,8 +2916,7 @@ class Tabs extends StatelessWidget {
                                           ],
                                         ),
                                         SizedBox(width: size.width * 0.0385),
-                                        SizedBox(
-                                          width: size.width * 0.6634,
+                                        Expanded(
                                           child: Column(
                                             mainAxisAlignment:
                                                 MainAxisAlignment.spaceBetween,
@@ -3084,8 +3036,7 @@ class Tabs extends StatelessWidget {
                                         SizedBox(
                                           width: size.width * 0.038475,
                                         ),
-                                        SizedBox(
-                                          width: size.width * 0.599,
+                                        Expanded(
                                           child: Column(
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
@@ -3122,13 +3073,8 @@ class Tabs extends StatelessWidget {
                                         ),
                                       ],
                                     ),
-                                    Padding(
-                                      padding: EdgeInsets.symmetric(
-                                        vertical: size.height * 0.01778,
-                                      ),
-                                      child: MySeparator(
-                                        color: AppColors.subWhite2,
-                                      ),
+                                    MySeparator(
+                                      color: AppColors.subWhite2,
                                     ),
                                     Row(
                                       children: [
@@ -3151,8 +3097,7 @@ class Tabs extends StatelessWidget {
                                         SizedBox(
                                           width: size.width * 0.0385,
                                         ),
-                                        SizedBox(
-                                          width: size.width * 0.6634,
+                                        Expanded(
                                           child: Column(
                                             mainAxisAlignment:
                                                 MainAxisAlignment.spaceBetween,
@@ -3288,8 +3233,7 @@ class Tabs extends StatelessWidget {
                                         SizedBox(
                                           width: size.width * 0.038475,
                                         ),
-                                        SizedBox(
-                                          width: size.width * 0.599,
+                                        Expanded(
                                           child: Column(
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
@@ -3326,13 +3270,8 @@ class Tabs extends StatelessWidget {
                                         ),
                                       ],
                                     ),
-                                    Padding(
-                                      padding: EdgeInsets.symmetric(
-                                        vertical: size.height * 0.01778,
-                                      ),
-                                      child: MySeparator(
-                                        color: AppColors.subWhite2,
-                                      ),
+                                    MySeparator(
+                                      color: AppColors.subWhite2,
                                     ),
                                     Row(
                                       children: [
@@ -3353,87 +3292,84 @@ class Tabs extends StatelessWidget {
                                           ],
                                         ),
                                         SizedBox(width: size.width * 0.0385),
-                                        SizedBox(
-                                          width: size.width * 0.6634,
-                                          child: Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            children: [
-                                              Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceBetween,
-                                                children: [
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                      text:
-                                                          "7 Adeola Solomon St, ketu, La...",
-                                                      style: TextStyle(
-                                                        fontFamily: "DM Sans",
-                                                        fontSize: 12,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        color: AppColors.black,
-                                                      ),
+                                        Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              children: [
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
+                                                    text:
+                                                        "7 Adeola Solomon St, ketu, La...",
+                                                    style: TextStyle(
+                                                      fontFamily: "DM Sans",
+                                                      fontSize: 12,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      color: AppColors.black,
                                                     ),
                                                   ),
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                      text: "1:32pm",
-                                                      style: TextStyle(
-                                                        fontFamily: "DM Sans",
-                                                        fontSize: 12,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        color:
-                                                            AppColors.subBlack2,
-                                                      ),
+                                                ),
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
+                                                    text: "1:32pm",
+                                                    style: TextStyle(
+                                                      fontFamily: "DM Sans",
+                                                      fontSize: 12,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      color:
+                                                          AppColors.subBlack2,
                                                     ),
                                                   ),
-                                                ],
-                                              ),
-                                              SizedBox(
-                                                height: size.height * 0.0237,
-                                              ),
-                                              Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceBetween,
-                                                children: [
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                      text:
-                                                          "32 Diya St, Gbagada, Lagos",
-                                                      style: TextStyle(
-                                                        fontFamily: "DM Sans",
-                                                        fontSize: 12,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        color: AppColors.black,
-                                                      ),
+                                                ),
+                                              ],
+                                            ),
+                                            SizedBox(
+                                              height: size.height * 0.0237,
+                                            ),
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              children: [
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
+                                                    text:
+                                                        "32 Diya St, Gbagada, Lagos",
+                                                    style: TextStyle(
+                                                      fontFamily: "DM Sans",
+                                                      fontSize: 12,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      color: AppColors.black,
                                                     ),
                                                   ),
-                                                  RichText(
-                                                    softWrap: true,
-                                                    text: TextSpan(
-                                                      text: "3:35pm",
-                                                      style: TextStyle(
-                                                        fontFamily: "DM Sans",
-                                                        fontSize: 12,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        color:
-                                                            AppColors.subBlack2,
-                                                      ),
+                                                ),
+                                                RichText(
+                                                  softWrap: true,
+                                                  text: TextSpan(
+                                                    text: "3:35pm",
+                                                    style: TextStyle(
+                                                      fontFamily: "DM Sans",
+                                                      fontSize: 12,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      color:
+                                                          AppColors.subBlack2,
                                                     ),
                                                   ),
-                                                ],
-                                              )
-                                            ],
-                                          ),
+                                                ),
+                                              ],
+                                            )
+                                          ],
                                         ),
                                       ],
                                     ),
@@ -3474,8 +3410,7 @@ class Tabs extends StatelessWidget {
                                         SizedBox(
                                           width: size.width * 0.038475,
                                         ),
-                                        SizedBox(
-                                          width: size.width * 0.599,
+                                        Expanded(
                                           child: Column(
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
@@ -3512,13 +3447,8 @@ class Tabs extends StatelessWidget {
                                         ),
                                       ],
                                     ),
-                                    Padding(
-                                      padding: EdgeInsets.symmetric(
-                                        vertical: size.height * 0.01778,
-                                      ),
-                                      child: MySeparator(
-                                        color: AppColors.subWhite2,
-                                      ),
+                                    MySeparator(
+                                      color: AppColors.subWhite2,
                                     ),
                                     Row(
                                       children: [
@@ -3539,8 +3469,7 @@ class Tabs extends StatelessWidget {
                                           ],
                                         ),
                                         SizedBox(width: size.width * 0.0385),
-                                        SizedBox(
-                                          width: size.width * 0.6634,
+                                        Expanded(
                                           child: Column(
                                             mainAxisAlignment:
                                                 MainAxisAlignment.spaceBetween,

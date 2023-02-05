@@ -3,9 +3,9 @@ import 'dart:ui';
 
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:karry_go/Screens/Login%20Screens/main.dart';
 import 'package:karry_go/Screens/OnBoarding%20Screen/onBoardingContent.dart';
-import 'package:karry_go/Screens/SignUp%20Screens/signUp.dart';
-import 'package:karry_go/Screens/mainScreen.dart';
+import 'package:karry_go/Screens/SignUp%20Screens/main.dart';
 import 'package:karry_go/utils/colors.dart';
 import 'package:karry_go/widgets/circles.dart';
 import 'package:karry_go/widgets/logo.dart';
@@ -67,7 +67,7 @@ class _OnboardingState extends State<Onboarding> {
       softWrap: true,
       text: TextSpan(
         style: TextStyle(
-          fontFamily: "DM Sana",
+          fontFamily: "DM Sans",
           fontSize: 13,
           color: AppColors.subWhite,
         ), //apply style to all
@@ -103,7 +103,7 @@ class _OnboardingState extends State<Onboarding> {
       softWrap: true,
       text: TextSpan(
         style: TextStyle(
-          fontFamily: "DM Sana",
+          fontFamily: "DM Sans",
           fontSize: 13,
           color: AppColors.subWhite,
         ), //apply style to all
@@ -121,7 +121,7 @@ class _OnboardingState extends State<Onboarding> {
       softWrap: true,
       text: TextSpan(
         style: TextStyle(
-          fontFamily: "DM Sana",
+          fontFamily: "DM Sans",
           fontSize: 13,
           color: AppColors.subWhite,
         ), //apply style to all
@@ -139,7 +139,7 @@ class _OnboardingState extends State<Onboarding> {
       softWrap: true,
       text: TextSpan(
         style: TextStyle(
-          fontFamily: "DM Sana",
+          fontFamily: "DM Sans",
           fontSize: 13,
           color: AppColors.subWhite,
         ), //apply style to all
@@ -289,7 +289,7 @@ class _OnboardingState extends State<Onboarding> {
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return MainScreen();
+                            return Login();
                           },
                         ),
                       );

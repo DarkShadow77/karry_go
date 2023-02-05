@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:karry_go/Screens/Login%20Screens/login.dart';
+import 'package:karry_go/Screens/Login%20Screens/main.dart';
 import 'package:karry_go/utils/colors.dart';
 import 'package:karry_go/widgets/logo.dart';
 

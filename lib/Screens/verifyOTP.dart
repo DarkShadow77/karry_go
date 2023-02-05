@@ -5,22 +5,25 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:karry_go/Screens/SignUp%20Screens/address.dart';
-import 'package:karry_go/Screens/SignUp%20Screens/signUp.dart';
+import 'package:karry_go/Screens/SignUp%20Screens/main.dart';
+import 'package:karry_go/Screens/mainScreen.dart';
 import 'package:karry_go/utils/colors.dart';
 import 'package:karry_go/utils/databasemethods.dart';
 import 'package:karry_go/utils/utils.dart';
 
 class VerifyOTP extends StatefulWidget {
-  const VerifyOTP({
+  VerifyOTP({
     Key? key,
     required this.phoneNumber,
     required this.codeTimeOut,
+    required this.phoneLogin,
     required this.userInfoMap,
   }) : super(key: key);
 
   final String phoneNumber;
   final int codeTimeOut;
-  final Map<String, dynamic> userInfoMap;
+  Map<String, dynamic> userInfoMap;
+  final bool phoneLogin;
 
   @override
   State<VerifyOTP> createState() => _VerifyOTPState();
@@ -79,15 +82,10 @@ class _VerifyOTPState extends State<VerifyOTP> {
     });
   }
 
-  final passwordController = TextEditingController();
-  final confirmPasswordController = TextEditingController();
-
   final FirebaseAuth auth = FirebaseAuth.instance;
 
   @override
   void dispose() {
-    confirmPasswordController.dispose();
-    passwordController.dispose();
     // TODO: implement dispose
     super.dispose();
   }
@@ -108,20 +106,30 @@ class _VerifyOTPState extends State<VerifyOTP> {
       PhoneAuthCredential credential = PhoneAuthProvider.credential(
           verificationId: SignUp.verify, smsCode: code);
 
-      // Sign the user in (or link) with the credential
       await auth.signInWithCredential(credential);
 
-      DatabaseMethods().addUserInfoDB(
-          FirebaseAuth.instance.currentUser!.uid, widget.userInfoMap);
+      if (widget.phoneLogin) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return MainScreen();
+            },
+          ),
+        );
+      } else {
+        DatabaseMethods().addUserInfoDB(
+            FirebaseAuth.instance.currentUser!.uid, widget.userInfoMap);
 
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) {
-            return Address();
-          },
-        ),
-      );
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return Address();
+            },
+          ),
+        );
+      }
     } catch (e) {
       Utils.showSnackBar("Worng OTP", size);
     }

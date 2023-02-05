@@ -1,6 +1,8 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:karry_go/Screens/mainScreen.dart';
+import 'package:karry_go/utils/colors.dart';
 import 'package:karry_go/widgets/circles.dart';
 import 'package:karry_go/widgets/logo.dart';
 import 'package:page_transition/page_transition.dart';
@@ -26,14 +28,16 @@ class SplashScreen extends StatelessWidget {
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return Center(
-                  child: CircularProgressIndicator(),
+                  child: CircularProgressIndicator(
+                    color: AppColors.green,
+                  ),
                 );
               } else if (snapshot.hasError) {
                 return Center(
                   child: Text('Something went wrong !'),
                 );
               } else if (snapshot.hasData) {
-                return Onboarding();
+                return MainScreen();
               } else {
                 return Onboarding();
               }

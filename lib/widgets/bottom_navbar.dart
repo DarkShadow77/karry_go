@@ -10,6 +10,7 @@ class BottomNavBar extends StatefulWidget {
     required this.tripsPressed,
     required this.earningPressed,
     required this.profilePressed,
+    required this.home,
   }) : super(key: key);
 
   final int currentIndex;
@@ -17,6 +18,7 @@ class BottomNavBar extends StatefulWidget {
   final VoidCallback tripsPressed;
   final VoidCallback earningPressed;
   final VoidCallback profilePressed;
+  final bool home;
 
   @override
   State<BottomNavBar> createState() => _BottomNavBarState();
@@ -27,12 +29,12 @@ class _BottomNavBarState extends State<BottomNavBar> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
+      color: widget.home ? Colors.transparent : AppColors.white,
       width: size.width * 0.845,
-      height: size.height * 0.06275,
-      padding: EdgeInsets.symmetric(
-        horizontal: size.width * 0.08,
-      ),
-      margin: EdgeInsets.only(
+      height: size.height * 0.13775,
+      padding: EdgeInsets.only(
+        left: size.width * 0.08,
+        right: size.width * 0.08,
         bottom: size.height * 0.051,
         top: size.height * 0.024,
       ),

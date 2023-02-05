@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:karry_go/Screens/Login%20Screens/main.dart';
 import 'package:karry_go/utils/colors.dart';
 import 'package:karry_go/widgets/logo.dart';
 import 'package:karry_go/widgets/mySeparator.dart';
@@ -82,7 +83,7 @@ class _CompletionStatusState extends State<CompletionStatus> {
                 ),
               ),
               SizedBox(
-                height: size.height * 0.05,
+                height: size.height * 0.04,
               ),
               Stack(
                 children: [
@@ -121,12 +122,44 @@ class _CompletionStatusState extends State<CompletionStatus> {
                         mainText: "Payment Information",
                         onpressed: () {},
                       ),
-                      SizedBox(
-                        height: size.height * 0.052,
-                      ),
                     ],
                   ),
                 ],
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  vertical: size.height * 0.015,
+                ),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return Login();
+                        },
+                      ),
+                    );
+                  },
+                  child: Container(
+                    alignment: Alignment.center,
+                    width: size.width * 0.84,
+                    height: size.height * 0.06,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: AppColors.black,
+                    ),
+                    child: Text(
+                      "Go to Login!",
+                      style: TextStyle(
+                        fontFamily: "DM Sans",
+                        fontSize: 12,
+                        fontWeight: FontWeight.w700,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
               ),
               RichText(
                 textAlign: TextAlign.center,

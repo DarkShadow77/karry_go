@@ -30,6 +30,8 @@ class _TripsState extends State<Trips> {
     Size size = MediaQuery.of(context).size;
     return Container(
       width: size.width * 1,
+      color: AppColors.white,
+      margin: EdgeInsets.only(bottom: size.height * 0.13775),
       child: CustomScrollView(
         physics: NeverScrollableScrollPhysics(),
         slivers: [
@@ -39,11 +41,16 @@ class _TripsState extends State<Trips> {
             toolbarHeight: size.height * 0.11135,
             automaticallyImplyLeading: false,
             floating: true,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(
+                bottom: Radius.circular(30),
+              ),
+            ),
             backgroundColor: AppColors.white,
             stretch: true,
             title: Container(
               padding: EdgeInsets.symmetric(
-                horizontal: size.width * 0.07,
+                horizontal: size.width * 0.05,
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,

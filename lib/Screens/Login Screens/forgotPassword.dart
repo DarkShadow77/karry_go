@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:karry_go/Screens/Login%20Screens/login.dart';
+import 'package:karry_go/Screens/Login%20Screens/main.dart';
 import 'package:karry_go/Screens/Login%20Screens/resetPassword.dart';
 import 'package:karry_go/utils/colors.dart';
 import 'package:karry_go/widgets/logo.dart';
@@ -79,27 +79,24 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                       style: TextStyle(
                         fontSize: 24,
                         color: AppColors.black,
-                        fontFamily: "Clash Groteskd",
-                        fontWeight: FontWeight.w600,
+                        fontFamily: "Clash Grotesk SemiBold",
                       ),
                     ),
                   ),
                   SizedBox(
                     height: size.height * 0.015,
                   ),
-                  Text(
-                    "A six digit OTP will be sent to your registered email, please type in your email and check mail to confirm 📮",
-                    textAlign: TextAlign.left,
-                    style: TextStyle(
-                      fontSize: 14,
-                      height: 2,
-                      color: AppColors.subBlack,
-                      fontFamily: "DM Sans",
-                      fontWeight: FontWeight.w400,
+                  RichText(
+                    text: TextSpan(
+                      text:
+                          "A six digit OTP will be sent to your registered email, please type in your email and check mail to confirm 📮",
+                      style: TextStyle(
+                        fontSize: 12,
+                        height: 2,
+                        color: AppColors.subBlack,
+                        fontFamily: "DM Sans",
+                      ),
                     ),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.all(2),
                   ),
                   SizedBox(
                     height: size.height * 0.023,

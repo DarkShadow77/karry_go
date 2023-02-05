@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
-import 'package:karry_go/Screens/Login%20Screens/login.dart';
+import 'package:karry_go/Screens/Login%20Screens/main.dart';
 import 'package:karry_go/Screens/verifyOTP.dart';
 import 'package:karry_go/utils/colors.dart';
 import 'package:karry_go/utils/utils.dart';
@@ -87,7 +87,10 @@ class _SignUpState extends State<SignUp> {
           timeout: Duration(seconds: codeTimeOut),
           verificationFailed: (FirebaseAuthException e) {
             if (e.code == 'invalid-phone-number') {
+              Navigator.of(context).pop();
               print('The provided phone number is not valid.');
+              Utils.showSnackBar(
+                  "The provided phone number is not valid.", size);
             }
           },
           codeSent: (String verificationId, int? resendToken) {
@@ -110,6 +113,7 @@ class _SignUpState extends State<SignUp> {
                       "state": "",
                       "city": "",
                     },
+                    phoneLogin: false,
                   );
                 },
               ),
@@ -300,73 +304,68 @@ class _SignUpState extends State<SignUp> {
                                       : AppColors.subWhite2,
                                   width: 1.0),
                             ),
-                            child: Stack(
-                              children: [
-                                InternationalPhoneNumberInput(
-                                  onInputChanged: (PhoneNumber value) {
-                                    int phoneLength =
-                                        value.phoneNumber.toString().length;
-                                    dialCode = value.dialCode.toString();
+                            child: InternationalPhoneNumberInput(
+                              onInputChanged: (PhoneNumber value) {
+                                int phoneLength =
+                                    value.phoneNumber.toString().length;
+                                dialCode = value.dialCode.toString();
 
-                                    setState(() {
-                                      phoneBool =
-                                          phoneLength < 14 ? true : false;
-                                    });
-                                  },
-                                  fieldKey: formKeys,
-                                  textFieldController: phoneController,
-                                  initialValue: PhoneNumber(
-                                    isoCode: "NG",
-                                  ),
-                                  cursorColor: AppColors.subWhite,
-                                  selectorConfig: SelectorConfig(
-                                    selectorType:
-                                        PhoneInputSelectorType.BOTTOM_SHEET,
-                                    setSelectorButtonAsPrefixIcon: true,
-                                  ),
-                                  textStyle: TextStyle(
-                                    fontSize: 13,
-                                    color: AppColors.subWhite,
-                                  ),
-                                  inputDecoration: InputDecoration(
-                                    border: InputBorder.none,
-                                    hintText: "Phone Number",
-                                    hintStyle: TextStyle(
-                                      fontSize: 13,
-                                      fontFamily: "DM Sans",
-                                      fontWeight: FontWeight.w400,
-                                      color: AppColors.subWhite,
-                                    ),
-                                  ),
-                                  maxLength: 12,
-                                  searchBoxDecoration: InputDecoration(
-                                    focusedBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(10),
-                                      borderSide: BorderSide(
-                                        color: AppColors.green,
-                                        width: 1.0,
-                                      ),
-                                    ),
-                                    enabledBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(10),
-                                      borderSide: BorderSide(
-                                        color: AppColors.subWhite2,
-                                        width: 1.0,
-                                      ),
-                                    ),
-                                    contentPadding: EdgeInsets.all(14),
-                                    filled: true,
-                                    fillColor: Colors.white,
-                                    hintText: "Phone Number",
-                                    hintStyle: TextStyle(
-                                      fontSize: 13,
-                                      fontFamily: "DM Sans",
-                                      fontWeight: FontWeight.w400,
-                                      color: AppColors.subWhite,
-                                    ),
+                                setState(() {
+                                  phoneBool = phoneLength < 14 ? true : false;
+                                });
+                              },
+                              fieldKey: formKeys,
+                              textFieldController: phoneController,
+                              initialValue: PhoneNumber(
+                                isoCode: "NG",
+                              ),
+                              cursorColor: AppColors.subWhite,
+                              selectorConfig: SelectorConfig(
+                                selectorType:
+                                    PhoneInputSelectorType.BOTTOM_SHEET,
+                                setSelectorButtonAsPrefixIcon: true,
+                              ),
+                              textStyle: TextStyle(
+                                fontSize: 13,
+                                color: AppColors.subWhite,
+                              ),
+                              inputDecoration: InputDecoration(
+                                border: InputBorder.none,
+                                hintText: "Phone Number",
+                                hintStyle: TextStyle(
+                                  fontSize: 13,
+                                  fontFamily: "DM Sans",
+                                  fontWeight: FontWeight.w400,
+                                  color: AppColors.subWhite,
+                                ),
+                              ),
+                              maxLength: 12,
+                              searchBoxDecoration: InputDecoration(
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                    color: AppColors.green,
+                                    width: 1.0,
                                   ),
                                 ),
-                              ],
+                                enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                    color: AppColors.subWhite2,
+                                    width: 1.0,
+                                  ),
+                                ),
+                                contentPadding: EdgeInsets.all(14),
+                                filled: true,
+                                fillColor: Colors.white,
+                                hintText: "Phone Number",
+                                hintStyle: TextStyle(
+                                  fontSize: 13,
+                                  fontFamily: "DM Sans",
+                                  fontWeight: FontWeight.w400,
+                                  color: AppColors.subWhite,
+                                ),
+                              ),
                             ),
                           ),
                           SizedBox(

@@ -58,7 +58,7 @@ class _ChartState extends State<Chart> {
     return Stack(
       children: [
         Container(
-          height: widget.size.height * 0.31,
+          height: widget.size.height * 0.315,
           padding: EdgeInsets.only(
             left: widget.size.width * 0.0385,
             right: widget.size.width * 0.0385,
@@ -253,7 +253,7 @@ class _ChartState extends State<Chart> {
         Container(
           alignment: Alignment.center,
           width: widget.size.width * 1,
-          height: widget.size.height * 0.31,
+          height: widget.size.height * 0.315,
           padding: EdgeInsets.only(
             left: widget.size.width * 0.12825,
             top: widget.size.height * 0.00355,
